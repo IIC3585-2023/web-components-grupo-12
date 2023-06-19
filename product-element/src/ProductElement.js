@@ -1,5 +1,18 @@
 import { html, css, LitElement } from 'lit';
 
+/**
+ *
+ * Componente de producto con calificación y precio.
+ *
+ * @element product-element
+ *
+ * @property {string} name - Nombre del producto.
+ * @property {number} price - Precio del producto.
+ * @property {number} starCount - Número de estrellas para la calificación del producto.
+ * @property {string} imageSrc - URL de la imagen del producto.
+ * @property {number} discount - Descuento en el producto.
+ *
+ */
 export class ProductElement extends LitElement {
   static styles = css`
     :host {
@@ -87,10 +100,18 @@ export class ProductElement extends LitElement {
     this.imageSrc = "https://tiendaempresas.entel.cl/media/catalog/product/cache/e83b319fe15d087a014efa16f11c0f36/i/p/iphone_14_morad_ok_1.png";
   }
 
+  /**
+   * Incrementa el conteo de estrellas en uno.
+   */
   __increment() {
     this.starCount += 1;
   }
 
+  /**
+   * Marca las estrellas según la calificación.
+   * @param {number} idx - Índice de la estrella a marcar.
+   * @returns {string} Clase CSS para marcar la estrella.
+   */
   marked(idx) {
     if (idx <= this.starCount) {
       return "star-checked";
@@ -99,12 +120,20 @@ export class ProductElement extends LitElement {
     }
   }
 
+  /**
+   * Actualiza la calificación del producto.
+   * @param {Event} e - Evento de clic.
+   */
   __rate(e) {
     const newRate = parseInt(e.target.id.slice(-1));
     console.log(newRate);
     this.starCount = newRate;
   }
 
+  /**
+   * Obtiene el precio original del producto.
+   * @returns {number} Precio original.
+   */
   getOriginalPrice() {
     if (this.discount) {
       return this.price;
@@ -113,6 +142,10 @@ export class ProductElement extends LitElement {
     }
   }
 
+  /**
+   * Obtiene el precio del producto con el descuento aplicado.
+   * @returns {number} Precio con descuento.
+   */
   getPrice() {
     if (this.discount) {
       return this.price - (this.price * this.discount / 100);
