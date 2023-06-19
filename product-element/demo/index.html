@@ -8,22 +8,14 @@
     }
   </style>
 </head>
+
+<script type="module">
+  import { html, render } from 'lit';
+  import '../product-element.js';
+</script>
+
 <body>
-  <div id="demo"></div>
-
-  <script type="module">
-    import { html, render } from 'lit';
-    import '../product-element.js';
-
-    const header = 'Hello owc World!';
-    render(
-      html`
-        <product-element .header=${header}>
-          some light-dom
-        </product-element>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
+    <product-element></product-element>
 </body>
+
 </html>

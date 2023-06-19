@@ -15,7 +15,7 @@ export class ProductElement extends LitElement {
       align-items: center;
       justify-content: space-between;
       width: 150px;
-      height: 300px;
+      min-height: fit-content;
       border-radius: 10px;
       padding: 10px;
       box-shadow: 0 0px 20px rgba(0,0,0,0.15);
@@ -145,3 +145,5 @@ export class ProductElement extends LitElement {
     `;
   }
 }
+
+customElements.define('product-element', ProductElement);
