@@ -4,44 +4,61 @@
     <meta charset="utf-8">
 </head>
 <style>
-    .container{
+  .container {
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
-    background-color:white;
-    }
+    background-color: white;
+    margin-left: 250px;
+  }
+
+  .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #c3bdbd;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
 </style>
 
 <script type="module" src="https://cdn.skypack.dev/product-element"></script>
+<script type="module" src="https://cdn.skypack.dev/tree-item"></script>
 
 <body>
-    <div class="container">
-        <product-element
-            name="AirPods"
-            price=180000
-            discount=44
-            imageSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dw0ac91eb0/images/imagenes-productos/742/604974-0000-001.jpg?sw=513&sh=654&sm=fit"
-            imageHoverSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dw5960d35e/images/imagenes-productos/742/604974-0000-002.jpg?sw=513&sh=654&sm=fit"
-            starCount="4"
-        ></product-element>
-        <product-element
-            name="iPad"
-            price=600000
-            discount=10
-            imageSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dwa43ac1bc/images/imagenes-productos/741/275238-0000-002.jpg?sw=513&sh=654&sm=fit"
-            imageHoverSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dw93d6084e/images/imagenes-productos/741/275238-0000-001.jpg?sw=513&sh=654&sm=fit"
-            starCount="3"
-        ></product-element>
-        <product-element
-            name="iPhone 13"
-            price=250000
-            imageSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dwf4c0eebf/images/imagenes-productos/704/275134-0000-003.jpg?sw=513&sh=654&sm=fit"
-            imageHoverSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dw6e947add/images/imagenes-productos/704/275134-0000-001.jpg?sw=513&sh=654&sm=fit"
-            starCount="5"
-        ></product-element>
+  <div class="sidebar">
+    <tree-item type="item">
+      Motores de Bases de Datos
+      <tree-item type="item">
+        Relacionales
+        <tree-item>
+          Open Source
+          <tree-item type="content">
+            MySql
+            </tree-ite>
+          </tree-item>
+        </tree-item>
+      </tree-item>
+  </div>
+  <div class="container">
+    <product-element name="AirPods" price=180000 discount=44
+      imageSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dw0ac91eb0/images/imagenes-productos/742/604974-0000-001.jpg?sw=513&sh=654&sm=fit"
+      imageHoverSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dw5960d35e/images/imagenes-productos/742/604974-0000-002.jpg?sw=513&sh=654&sm=fit"
+      starCount="4"></product-element>
+    <product-element name="iPad" price=600000 discount=10
+      imageSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dwa43ac1bc/images/imagenes-productos/741/275238-0000-002.jpg?sw=513&sh=654&sm=fit"
+      imageHoverSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dw93d6084e/images/imagenes-productos/741/275238-0000-001.jpg?sw=513&sh=654&sm=fit"
+      starCount="3"></product-element>
+    <product-element name="iPhone 13" price=250000
+      imageSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dwf4c0eebf/images/imagenes-productos/704/275134-0000-003.jpg?sw=513&sh=654&sm=fit"
+      imageHoverSrc="https://www.paris.cl/dw/image/v2/BCHW_PRD/on/demandware.static/-/Sites-cencosud-master-catalog/default/dw6e947add/images/imagenes-productos/704/275134-0000-001.jpg?sw=513&sh=654&sm=fit"
+      starCount="5"></product-element>
 
-    </div>
+  </div>
 </body>
 
 </html>
