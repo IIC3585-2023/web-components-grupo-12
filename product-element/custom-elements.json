@@ -1,0 +1,207 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ProductElement",
+          "declaration": {
+            "name": "ProductElement",
+            "module": "./src/ProductElement.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "product-element.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "product-element",
+          "declaration": {
+            "name": "ProductElement",
+            "module": "/src/ProductElement.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ProductElement.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "\nComponente de producto con calificación y precio.",
+          "name": "ProductElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "__increment",
+              "description": "Incrementa el conteo de estrellas en uno."
+            },
+            {
+              "kind": "method",
+              "name": "marked",
+              "parameters": [
+                {
+                  "name": "idx",
+                  "description": "Índice de la estrella a marcar.",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Marca las estrellas según la calificación.",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__rate",
+              "parameters": [
+                {
+                  "name": "e",
+                  "description": "Evento de clic.",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Actualiza la calificación del producto."
+            },
+            {
+              "kind": "method",
+              "name": "getOriginalPrice",
+              "description": "Obtiene el precio original del producto.",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getPrice",
+              "description": "Obtiene el precio del producto con el descuento aplicado.",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "'iPhone 14'",
+              "description": "Nombre del producto.",
+              "privacy": "public",
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "starCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "3",
+              "description": "Número de estrellas para la calificación del producto.",
+              "privacy": "public",
+              "attribute": "starCount"
+            },
+            {
+              "kind": "field",
+              "name": "price",
+              "type": {
+                "text": "number"
+              },
+              "default": "974990",
+              "description": "Precio del producto.",
+              "privacy": "public",
+              "attribute": "price"
+            },
+            {
+              "kind": "field",
+              "name": "imageSrc",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"https://tiendaempresas.entel.cl/media/catalog/product/cache/e83b319fe15d087a014efa16f11c0f36/i/p/iphone_14_morad_ok_1.png\"",
+              "description": "URL de la imagen del producto.",
+              "privacy": "public",
+              "attribute": "imageSrc"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Descuento en el producto.",
+              "name": "discount",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "discount"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "name",
+              "fieldName": "name"
+            },
+            {
+              "name": "price",
+              "fieldName": "price"
+            },
+            {
+              "name": "starCount",
+              "fieldName": "starCount"
+            },
+            {
+              "name": "imageSrc",
+              "fieldName": "imageSrc"
+            },
+            {
+              "name": "discount",
+              "fieldName": "discount"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "product-element",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ProductElement",
+          "declaration": {
+            "name": "ProductElement",
+            "module": "src/ProductElement.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "product-element",
+          "declaration": {
+            "name": "ProductElement",
+            "module": "src/ProductElement.js"
+          }
+        }
+      ]
+    }
+  ]
+}
