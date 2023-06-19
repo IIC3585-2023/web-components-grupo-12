@@ -15,7 +15,8 @@ export class ProductElement extends LitElement {
       align-items: center;
       justify-content: space-between;
       width: 150px;
-      min-height: fit-content;
+      min-height: 350px;
+      max-height: fit-content;
       border-radius: 10px;
       padding: 10px;
       box-shadow: 0 0px 20px rgba(0,0,0,0.15);
@@ -84,7 +85,6 @@ export class ProductElement extends LitElement {
     this.starCount = 3;
     this.price = 974990;
     this.imageSrc = "https://tiendaempresas.entel.cl/media/catalog/product/cache/e83b319fe15d087a014efa16f11c0f36/i/p/iphone_14_morad_ok_1.png";
-    this.discount = 20;
   }
 
   __increment() {
