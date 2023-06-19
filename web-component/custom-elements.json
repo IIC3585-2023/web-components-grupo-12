@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TreeItem",
+          "declaration": {
+            "name": "TreeItem",
+            "module": "./src/TreeItem.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "tree-item.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "tree-item",
+          "declaration": {
+            "name": "TreeItem",
+            "module": "/src/TreeItem.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/TreeItem.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Componente de menu desplegable.",
+          "name": "TreeItem",
+          "slots": [
+            {
+              "description": "Slot para elementos hijos",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "method",
+              "name": "toggle"
+            },
+            {
+              "kind": "field",
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "$toggle"
+            },
+            {
+              "kind": "field",
+              "name": "$children"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"item\""
+            }
+          ],
+          "attributes": [
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "description": "Contenido o item del menu"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "tree-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TreeItem",
+          "declaration": {
+            "name": "TreeItem",
+            "module": "src/TreeItem.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "tree-item",
+          "declaration": {
+            "name": "TreeItem",
+            "module": "src/TreeItem.js"
+          }
+        }
+      ]
+    }
+  ]
+}

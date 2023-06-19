@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Web Components</title>
-    <script src="./tree-item.js"></script>
-  </head>
-  <body>
+
+<head>
+  <title>Web Components</title>
+  <script src="./tree-item.js"></script>
+</head>
+
+<body>
+  <tree-item>
+    Motores de Bases de Datos
     <tree-item>
-      Motores de Bases de Datos
-      <tree-item> 
-        Relacionales 
-        <tree-item> 
-          Open Source
-          <tree-item>
-            MySQL
-          </tree-item>
-          <tree-item>
-            PostgreSQL
-          </tree-item>
-        </tree-item> 
-        <tree-item> 
-          Propietarios
-          <tree-item>
-            Oracle
-          </tree-item>
-          <tree-item>
-            SQL Server
-          </tree-item>
-        </tree-item> 
-      </tree-item> 
-      <tree-item> 
-        NoSQL 
+      Relacionales
+      <tree-item>
+        Open Source
+        <tree-item type="content">
+          MySQL
+        </tree-item>
         <tree-item>
-          Modelo Documentos 
-        </tree-item> 
-        <tree-item> 
-          Modelo Grafos 
-        </tree-item> 
-      </tree-item> 
+          PostgreSQL
+        </tree-item>
+      </tree-item>
+      <tree-item>
+        Propietarios
+        <tree-item>
+          Oracle
+        </tree-item>
+        <tree-item>
+          SQL Server
+        </tree-item>
+      </tree-item>
     </tree-item>
-  </body>
+    <tree-item>
+      NoSQL
+      <tree-item>
+        Modelo Documentos
+      </tree-item>
+      <tree-item>
+        Modelo Grafos
+      </tree-item>
+    </tree-item>
+  </tree-item>
+</body>
+
 </html>
