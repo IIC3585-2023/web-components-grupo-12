@@ -6,28 +6,38 @@ export class ProductElement extends LitElement {
       display: block;
       padding: 25px;
       color: var(--product-element-text-color, #000);
-      font-family: Tahoma;
+      font-family: Arial;
     }
     .product-container {
+      background-color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       width: 150px;
       min-height: fit-content;
-      border: solid 2px;
       border-radius: 10px;
       padding: 10px;
+      box-shadow: 0 0px 20px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+    .product-container:hover {
+      box-shadow: 0 0px 40px rgba(0,0,0,0.3);
     }
     .product-image {
       width: 80%;
     }
+    .star-info {
+      color: gray;
+      font-size: 13px;
+      margin: 0;
+    }
     .star-container {
-      margin-top: 10px;
+      margin-top: 5px;
     }
     .star {
       color: gray;
-      font-size: 15px;
+      font-size: 17px;
       border: none;
       background: transparent;
       padding: 0;
@@ -45,12 +55,17 @@ export class ProductElement extends LitElement {
       align-items: center;
       height: 20px;
     }
+    .price {
+      font-weight: bold;
+      font-size: 20px;
+    }
     .discount {
       margin-left: 10px;
       padding: 5px;
       background-color: crimson;
       color: white;
       border-radius: 5px;
+      font-weight: bold;
     }
 
   `;
@@ -113,11 +128,12 @@ export class ProductElement extends LitElement {
         <div>
           <h2>${this.name}</h2>
           <div class="price-container">
-            <p class="price">$${this.getPrice()}</p>
+            <p class="price">$${this.getPrice().toLocaleString('es-ES')}</p>
             <p class="discount" style="${this.getOriginalPrice() ? ("") : ("display: none;")}">${this.discount}%</p>
           </div>
-          <p class="old-price" style="${this.getOriginalPrice() ? ("") : ("display: none;")}">$${this.getOriginalPrice()}</p>
+          <p class="old-price" style="${this.getOriginalPrice() ? ("") : ("display: none;")}">$${this.getOriginalPrice().toLocaleString('es-ES')}</p>
         </div>
+        <p class="star-info">Rate this product</p>
         <div class="star-container">
           <button class="star ${this.marked(1)}" @click=${this.__rate} id="star-1">★</button>
           <button class="star ${this.marked(2)}" @click=${this.__rate} id="star-2">★</button>
