@@ -49,7 +49,19 @@
           "members": [
             {
               "kind": "method",
+              "name": "getLabel"
+            },
+            {
+              "kind": "method",
               "name": "toggle"
+            },
+            {
+              "kind": "method",
+              "name": "getIcon"
+            },
+            {
+              "kind": "method",
+              "name": "hasChildren"
             },
             {
               "kind": "field",
@@ -66,23 +78,6 @@
             {
               "kind": "field",
               "name": "$children"
-            },
-            {
-              "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"item\""
-            }
-          ],
-          "attributes": [
-            {
-              "name": "type",
-              "type": {
-                "text": "string"
-              },
-              "description": "Contenido o item del menu"
             }
           ],
           "superclass": {

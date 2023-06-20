@@ -25,6 +25,12 @@ template.innerHTML = `
   </div>
 `;
 
+/**
+ * Componente de menu desplegable.
+ *
+ * @slot - Slot para elementos hijos
+ *
+ */
 export class TreeItem extends HTMLElement {
   constructor() {
     super();
