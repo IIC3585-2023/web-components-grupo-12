@@ -28,7 +28,7 @@ template.innerHTML = `
 class TreeItem extends HTMLElement {
   constructor() {
     super();
-    this.isExpanded = false;
+    this.expanded = false;
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.$toggle = this.shadowRoot.querySelector('.toggle');
@@ -45,24 +45,25 @@ class TreeItem extends HTMLElement {
 
   getLabel() {
     let childNodes = Array.from(this.childNodes);
-    let textNode = childNodes.find(node => node.nodeType === Node.TEXT_NODE && node.nodeValue !== '');
-    this.removeChild(textNode);
-    return textNode.nodeValue.trim();
+    let node = childNodes.find(node => node.nodeType === Node.TEXT_NODE && node.nodeValue !== '');
+    let label = node.nodeValue.trim();
+    this.removeChild(node);
+    return label;
   }
 
   toggle() {
-    this.isExpanded = !this.isExpanded;
+    this.expanded = !this.expanded;
     this.render();
   }
 
   render() {
     this.$toggle.textContent = this.getIcon() + this.label;
-    this.$children.style.display = this.isExpanded ? 'block' : 'none';
+    this.$children.style.display = this.expanded ? 'block' : 'none';
   }
 
   getIcon() {
     if (this.hasChildren()) {
-      if (this.isExpanded) {
+      if (this.expanded) {
         return '▼ ';
       } else {
         return '► ';
