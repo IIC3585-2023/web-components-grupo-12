@@ -25,7 +25,7 @@ template.innerHTML = `
   </div>
 `;
 
-class TreeItem extends HTMLElement {
+export class TreeItem extends HTMLElement {
   constructor() {
     super();
     this.expanded = false;

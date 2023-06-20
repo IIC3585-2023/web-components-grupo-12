@@ -2,14 +2,16 @@
 <html>
   <head>
     <title>Web Components</title>
-    <script src="./tree-item.js"></script>
+    <script type="module">
+      import '../tree-item.js';
+    </script>
   </head>
   <body>
     <tree-item>
       Motores de Bases de Datos
-      <tree-item> 
-        Relacionales 
-        <tree-item> 
+      <tree-item>
+        Relacionales
+        <tree-item>
           Open Source
           <tree-item>
             MySQL
@@ -17,8 +19,8 @@
           <tree-item>
             PostgreSQL
           </tree-item>
-        </tree-item> 
-        <tree-item> 
+        </tree-item>
+        <tree-item>
           Propietarios
           <tree-item>
             Oracle
@@ -26,17 +28,17 @@
           <tree-item>
             SQL Server
           </tree-item>
-        </tree-item> 
-      </tree-item> 
-      <tree-item> 
-        NoSQL 
+        </tree-item>
+      </tree-item>
+      <tree-item>
+        NoSQL
         <tree-item>
-          Modelo Documentos 
-        </tree-item> 
-        <tree-item> 
-          Modelo Grafos 
-        </tree-item> 
-      </tree-item> 
+          Modelo Documentos
+        </tree-item>
+        <tree-item>
+          Modelo Grafos
+        </tree-item>
+      </tree-item>
     </tree-item>
   </body>
 </html>

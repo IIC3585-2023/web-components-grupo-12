@@ -3,7 +3,7 @@
   "description": "Webcomponent product-element following open-wc recommendations",
   "license": "MIT",
   "author": "product-element",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
@@ -13,7 +13,8 @@
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
-    "start": "web-dev-server"
+    "start": "web-dev-server",
+    "dev": "web-dev-server --watch --open"
   },
   "dependencies": {
     "lit": "^2.0.2"
