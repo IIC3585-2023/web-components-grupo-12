@@ -2,49 +2,30 @@ const template = document.createElement('template');
 
 template.innerHTML = `
   <style>
-  .tree-item {
-    display: none;
-  }
-  .tree-item.visible {
-    display: block;
-  }
-  .toggle{
-    color: #444;
-    padding: 18px;
-    width: 100%;
-    border-radius: 5px;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-  }
+    :host {
+      font-family: Arial, sans-serif;
+    }
+    .toggle {
+      cursor: pointer;
+      padding: 5px;
+      background-color: #DFE9FF;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+    .toggle:hover {
+      background-color: #BFD3FF;
+    }
+    .tree-item {
+      margin-left: 30px;
+    }
   </style>
-    <div class="toggle"></div>
-    <div class="tree-item">
-    <slot></slot>
+  <div class="toggle"></div>
+  <div class="tree-item">
+  <slot></slot>
   </div>
 `;
 
-/**
- * Componente de menu desplegable.
- *
- * @slot - Slot para elementos hijos
- * @attr {string} type - Contenido o item del menu
- *
- */
-
-export class TreeItem extends HTMLElement {
-
-  static get observedAttributes() {
-    return ["type"];
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "type") {
-      this.type = newValue;
-    }
-  }
-
+class TreeItem extends HTMLElement {
   constructor() {
     super();
     this.expanded = false;
@@ -52,26 +33,23 @@ export class TreeItem extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.$toggle = this.shadowRoot.querySelector('.toggle');
     this.$children = this.shadowRoot.querySelector('.tree-item');
-    this.type = "item";
   }
 
   connectedCallback() {
     setTimeout(() => {
-      let childNodes = Array.from(this.childNodes);
-      let textNode = childNodes.find(node => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '');
-      if (textNode) {
-          this.label = textNode.nodeValue.trim();
-          this.removeChild(textNode);
-      } else {
-        this.label = '';
-      }
-      if (this.type === "item") {
-        this.$toggle.addEventListener("click", () => this.toggle());
-      }
+      this.label = this.getLabel();
+      this.$toggle.addEventListener('click', () => this.toggle());
       this.render();
     });
   }
 
+  getLabel() {
+    let childNodes = Array.from(this.childNodes);
+    let node = childNodes.find(node => node.nodeType === Node.TEXT_NODE && node.nodeValue !== '');
+    let label = node.nodeValue.trim();
+    this.removeChild(node);
+    return label;
+  }
 
   toggle() {
     this.expanded = !this.expanded;
@@ -79,18 +57,26 @@ export class TreeItem extends HTMLElement {
   }
 
   render() {
+    this.$toggle.textContent = this.getIcon() + this.label;
+    this.$children.style.display = this.expanded ? 'block' : 'none';
+  }
 
-    if (this.type == "item") {
-      this.$toggle.textContent = (this.expanded ? "- " : "+ ") + this.label;
-      this.$toggle.style.backgroundColor = "#eee";
-      this.$children.style.backgroundColor = "#eee";
-      this.$children.style.display = this.expanded ? "block" : "none";
+  getIcon() {
+    if (this.hasChildren()) {
+      if (this.expanded) {
+        return '▼ ';
+      } else {
+        return '► ';
+      }
     } else {
-      this.$toggle.textContent = this.label;
-      this.$toggle.style.backgroundColor = "white";
-      this.$children.style.backgroundColor = "white";
+      return ' ';
     }
+  }
+
+  hasChildren() {
+    let childNodes = Array.from(this.childNodes);
+    return childNodes.some(node => node.nodeType != Node.TEXT_NODE);
   }
 }
 
-window.customElements.define("tree-item", TreeItem);
+window.customElements.define('tree-item', TreeItem);
