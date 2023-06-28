@@ -10,17 +10,18 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     background-color: white;
-    margin-left: 250px;
+    margin-left: 300px;
   }
 
   .sidebar {
     height: 100%;
-    width: 250px;
+    width: 300px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #c3bdbd;
+    /* background-color: #c3bdbd; */
+    background-color: white;
     overflow-x: hidden;
     padding-top: 20px;
   }
@@ -31,18 +32,59 @@
 
 <body>
   <div class="sidebar">
-    <tree-item type="item">
-      Motores de Bases de Datos
-      <tree-item type="item">
-        Relacionales
+    <tree-item>
+      Tecnología
+      <tree-item>
+        Celulares
         <tree-item>
-          Open Source
-          <tree-item type="content">
-            MySql
-            </tree-ite>
+          Smartphones
+          <tree-item>iPhone</tree-item>
+          <tree-item>Samsung</tree-item>
+          <tree-item>Xiaomi</tree-item>
+          <tree-item>
+            Accesorios
+            <tree-item>
+              Audífonos
+              <tree-item>Inalámbricos</tree-item>
+              <tree-item>Cableados</tree-item>
+            </tree-item>
+            <tree-item>Cargadores</tree-item>
+            <tree-item>Adaptadores</tree-item>
+            <tree-item>Baterías</tree-item>
+            <tree-item>Carcasas</tree-item>
           </tree-item>
         </tree-item>
+        <tree-item>Básicos</tree-item>
       </tree-item>
+      <tree-item>
+        Computadores
+        <tree-item>Notebooks</tree-item>
+        <tree-item>Tablets</tree-item>
+        <tree-item>PC Gamers</tree-item>
+      </tree-item>
+      <tree-item>
+        Consolas y Videojuegos
+        <tree-item>PlayStation</tree-item>
+        <tree-item>Nintendo</tree-item>
+        <tree-item>Xbox</tree-item>
+        <tree-item>Videojuegos</tree-item>
+      </tree-item>
+      <tree-item>
+        Fotografía
+        <tree-item>Semiprofesionales</tree-item>
+        <tree-item>Cámaras Compactas</tree-item>
+        <tree-item>Cámaras Deportivas</tree-item>
+        <tree-item>Cámaras de Video</tree-item>
+      </tree-item>
+      <tree-item>
+        Accesorios Computación
+        <tree-item>Monitores</tree-item>
+        <tree-item>Discos Duros</tree-item>
+        <tree-item>Proyectores</tree-item>
+        <tree-item>Mouse y Teclados</tree-item>
+      </tree-item>
+      
+    </tree-item>
   </div>
   <div class="container">
     <product-element name="AirPods" price=180000 discount=44
